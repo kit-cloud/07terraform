@@ -3,10 +3,6 @@ provider "azurerm" {
   features {}
 }
 
-required_providers {
-
-}
-
 locals {
   deployment_name   = "single-proxy"
   location          = "eastus"
