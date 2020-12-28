@@ -10,10 +10,9 @@ locals {
   nodes_record_name = "nodes"
 }
 
-
 module "proxy_container" {
   source = "./modules/proxy-container"
-  deployment_name     = "${local.deployment_name}-node"
+  deployment_name     = "${local.deployment_name}"
   resource_group_name = "CloudTech"
   location            = local.location
   nodes_count         = 1
