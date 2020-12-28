@@ -3,6 +3,10 @@ provider "azurerm" {
   features {}
 }
 
+required_providers {
+
+}
+
 locals {
   deployment_name   = "single-proxy"
   location          = "eastus"
@@ -13,10 +17,10 @@ locals {
 
 module "proxy_container" {
   source = "./modules/proxy-container"
-  nodes_count         = 1
   deployment_name     = "${local.deployment_name}-node"
   resource_group_name = "CloudTech"
   location            = local.location
+  nodes_count         = 1
   image               = "docker.io/zaazp/dockerproxy"
   port                = 80
 }
